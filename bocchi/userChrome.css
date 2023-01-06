@@ -1,0 +1,115 @@
+/* Blur webpage when a modal is open (close all tabs, js alerts, etc.)*/
+/* https://www.reddit.com/r/FirefoxCSS/comments/101029m/how_can_i_blur_the_main_window_when_firefox_has_a/ */
+
+browser[primary="true"][tabDialogShowing="true"],
+#main-window[window-modal-open="true"]>body>#browser {
+    filter: blur(10px)
+}
+
+
+
+/* Blur email address in hamburger menu */
+/* https://www.reddit.com/r/FirefoxCSS/comments/yck6gt/blurring_email_address_in_hamburger_menu_for_some/ */
+
+#appMenu-popup #appMenu-header-description {
+    filter: blur(4px) !important;
+    transition: filter 350ms ease-out !important;
+    transition-delay: 250ms !important;
+}
+
+#appMenu-popup #appMenu-fxa-label2:hover #appMenu-header-description {
+    filter: blur(0px) !important;
+}
+
+
+
+/* Shows tab audio icons next to the tab icon, and by default removes the tab secondary line */
+/* https://github.com/MrOtherGuy/firefox-csshacks/tree/master/chrome/inline_tab_audio_icons.css */
+
+.tabbrowser-tab:not([pinned]) .tab-icon-stack:is([muted], [soundplaying], [activemedia-blocked]) {
+    grid-template-areas: "a s";
+}
+
+.tabbrowser-tab:not([pinned]) .tab-icon-overlay:is([muted], [soundplaying], [activemedia-blocked]) {
+    grid-area: s;
+}
+
+.tab-icon-overlay,
+.tab-icon-image,
+.tab-throbber {
+    opacity: 1 !important;
+}
+
+.tab-icon-overlay:not([pinned]) {
+    padding: 0px !important;
+    margin-inline: -3px 1px !important;
+}
+
+/* secondary audio label ain't much use with this style, but feel free to remove the next line if you want to show it. */
+.tab-secondary-label {
+    display: none
+}
+
+/* show the secondary label when video is in PiP */
+.tab-secondary-label[pictureinpicture] {
+    display: -moz-box
+}
+
+/* These exist for compatibility with combined_favicon_and_tab_close_button.css */
+.tab-icon-overlay {
+    pointer-events: auto
+}
+
+.tab-content>.tab-icon-stack,
+.tab-icon-stack:hover>.tab-icon-image {
+    visibility: visible
+}
+
+
+
+/* Remove items from image context menu */
+
+/* Email Image... */
+#context-sendimage,
+
+/* Set Image as Desktop Background... (and preceding separator) */
+#context-sep-setbackground,
+#context-setDesktopBackground,
+
+/* Inspect Accessibility Properties */
+#context-inspect-a11y {
+    display: none !important;
+}
+
+
+
+/* Reduce brightness when searchbar is focused */
+#nav-bar[urlbar-exceeds-toolbar-bounds="true"]::before {
+    position: fixed;
+    content: "";
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    pointer-events: none;
+}
+
+
+
+/* Nav-bar color */
+:root {
+    --toolbar-bgcolor: black !important;
+}
+
+#nav-bar {
+    background-color: black !important;
+}
+
+
+
+/* Tabs bar color */
+#TabsToolbar {
+    background-color: black !important
+}

@@ -1,0 +1,56 @@
+/* Customize home / newtab */
+@media (min-width: 1600px) and (min-height: 1100px) {
+
+    @-moz-document url("about:home"),
+    url("about:newtab") {
+
+        /* Change background */
+        body {
+            background-image: url("wp_bocchi.png");
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position-x: center;
+            background-position-y: bottom;
+        }
+
+        /* Layout positioning */
+        .ds-outer-wrapper-breakpoint-override main {
+            width: 1200px !important;
+        }
+
+        .outer-wrapper.only-search {
+            padding-top: 15px !important;
+        }
+
+        /* Logo image */
+        .search-wrapper .logo-and-wordmark .logo {
+            background-image: url("logo_bocchi.png") !important;
+            background-size: 300px !important;
+            height: 300px !important;
+            width: 300px !important;
+        }
+
+
+        /* Logo text */
+        .search-wrapper .logo-and-wordmark .wordmark {
+            background: url("text_bocchi.png") !important;
+            background-size: 700px !important;
+            height: 100px !important;
+            width: 700px !important;
+            margin-inline-start: 50px !important;
+        }
+
+        /* Searchbar */
+        .search-handoff-button,
+        .tile {
+            background-color: transparent !important;
+            backdrop-filter: blur(10px);
+        }
+
+        /* Remove setting icon */
+        .icon.icon-settings {
+            display: none !important;
+        }
+    }
+}
