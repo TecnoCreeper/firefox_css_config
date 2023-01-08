@@ -1,27 +1,49 @@
 /* Customize home / newtab */
-@media (min-width: 1600px) and (min-height: 1100px) {
 
-    @-moz-document url("about:home"),
-    url("about:newtab") {
 
-        /* Change background */
-        body {
-            background-image: url("wp_bocchi.png");
-            background-size: cover;
-            background-repeat: no-repeat;
-            background-attachment: fixed;
-            background-position-x: center;
-            background-position-y: bottom;
-        }
+@-moz-document url("about:home"),
+url("about:newtab") {
 
-        /* Layout positioning */
-        .ds-outer-wrapper-breakpoint-override main {
-            width: 1200px !important;
-        }
+    /* Change background */
+    body {
+        background-image: url("wp_bocchi.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position-x: center;
+        background-position-y: bottom;
+    }
 
-        .outer-wrapper.only-search {
-            padding-top: 15px !important;
-        }
+    /* Layout positioning */
+    .ds-outer-wrapper-breakpoint-override main {
+        width: 1200px !important;
+    }
+
+    .outer-wrapper.only-search {
+        padding-top: 15px !important;
+    }
+
+
+    /* Logo image */
+    .search-wrapper .logo-and-wordmark .logo {
+        background-image: url("logo_bocchi.png") !important;
+        background-size: 200px !important;
+        height: 200px !important;
+        width: 200px !important;
+    }
+
+
+    /* Logo text */
+    .search-wrapper .logo-and-wordmark .wordmark {
+        background: url("text_bocchi.png") !important;
+        background-size: 600px !important;
+        height: 80px !important;
+        width: 600px !important;
+        margin-inline-start: 50px !important;
+    }
+
+
+    @media (min-width: 1600px) and (min-height: 1100px) {
 
         /* Logo image */
         .search-wrapper .logo-and-wordmark .logo {
@@ -40,17 +62,18 @@
             width: 700px !important;
             margin-inline-start: 50px !important;
         }
+    }
 
-        /* Searchbar */
-        .search-handoff-button,
-        .tile {
-            background-color: transparent !important;
-            backdrop-filter: blur(10px);
-        }
 
-        /* Remove setting icon */
-        .icon.icon-settings {
-            display: none !important;
-        }
+    /* Searchbar */
+    .search-handoff-button,
+    .tile {
+        background-color: transparent !important;
+        backdrop-filter: blur(10px);
+    }
+
+    /* Remove setting icon */
+    .icon.icon-settings {
+        display: none !important;
     }
 }
